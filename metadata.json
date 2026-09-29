@@ -1,0 +1,6 @@
+{
+  "name": "Pantau Stok Multi-Channel",
+  "description": "Sistem Sinkronisasi Stok Multi-Channel Terpusat (Gudang, Toko, Reseller, Online) dengan Integrasi Supabase",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

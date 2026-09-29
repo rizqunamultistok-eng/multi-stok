@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pantau Stok Multi-Channel</title>
+    <meta name="description" content="Sistem Sinkronisasi Stok Multi-Channel Terpusat (Gudang, Toko, Etalase, Reseller, Online) dengan Integrasi Supabase" />
+    <meta property="og:title" content="Pantau Stok Multi-Channel" />
+    <meta property="og:description" content="Sistem Sinkronisasi Stok Multi-Channel Terpusat (Gudang, Toko, Etalase, Reseller, Online) dengan Integrasi Supabase" />
+    <meta name="theme-color" content="#8d4b9f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PantauStok" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <script>
+      // Prevent "TypeError: Cannot set property fetch of #<Window> which has only a getter"
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && window.fetch) {
+            var origFetch = window.fetch.bind(window);
+            var activeFetch = origFetch;
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function() { return activeFetch; },
+                set: function(fn) { activeFetch = fn; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e) {
+              // ignore descriptor failure if unconfigurable
+            }
+          }
+        } catch (err) {
+          // ignore
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
